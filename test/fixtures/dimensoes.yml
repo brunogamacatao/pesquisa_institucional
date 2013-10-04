@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ordem: 1
+  nome: MyString
+  pesquisa: 
+
+two:
+  ordem: 1
+  nome: MyString
+  pesquisa: 

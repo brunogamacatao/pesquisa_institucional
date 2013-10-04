@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  instituicao: 
+  ano: 1
+  perioso: 1
+  nome: MyString
+
+two:
+  instituicao: 
+  ano: 1
+  perioso: 1
+  nome: MyString

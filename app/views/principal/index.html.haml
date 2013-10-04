@@ -1,0 +1,17 @@
+%h3= @pesquisa.nome
+= simple_form_for @pesquisa do |f|
+  = f.input :id, as: :hidden
+  = f.simple_fields_for :dimensoes do |dimensao|
+    = dimensao.input :id, as: :hidden
+    .panel
+      %h6= dimensao.object.nome
+      %hr
+      = dimensao.simple_fields_for :perguntas do |pergunta|
+        .row
+          %div{:class=>"small-2 columns"}
+            = pergunta.input :id, as: :hidden
+            = pergunta.input :resposta, collection: 0..5, as: :star_rating, label: false, error_html: { class: 'validation_error'}
+          %div{:class=>"small-10 columns"}
+            %label{:class=>"inline"}= pergunta.object.nome
+  .row= f.submit 'Enviar Respostas', :class => 'large button expand round'
+          
