@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003205112) do
+ActiveRecord::Schema.define(:version => 20131006200713) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -86,9 +86,10 @@ ActiveRecord::Schema.define(:version => 20131003205112) do
     t.integer  "instituicao_id"
     t.integer  "ano"
     t.string   "nome"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "periodo"
+    t.boolean  "professor",      :default => false
   end
 
   add_index "pesquisas", ["instituicao_id"], :name => "index_pesquisas_on_instituicao_id"
@@ -96,13 +97,11 @@ ActiveRecord::Schema.define(:version => 20131003205112) do
   create_table "respostas", :force => true do |t|
     t.integer  "resposta"
     t.integer  "pergunta_id"
-    t.integer  "usuario_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   add_index "respostas", ["pergunta_id"], :name => "index_respostas_on_pergunta_id"
-  add_index "respostas", ["usuario_id"], :name => "index_respostas_on_usuario_id"
 
   create_table "usuarios", :force => true do |t|
     t.string   "login"

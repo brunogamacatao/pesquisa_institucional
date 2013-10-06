@@ -3,6 +3,10 @@ class Usuario < ActiveRecord::Base
   
   validates_uniqueness_of :login
   
+  def aluno?
+    login.length == 10
+  end
+  
   def curso
     puts Curso.all
     Curso.where(:codigo => login[3..5].to_i).first

@@ -1,6 +1,7 @@
 ActiveAdmin.register Pesquisa do
   index do
     column :nome
+    column :professor
     column :ano
     column :periodo
     default_actions
@@ -9,6 +10,7 @@ ActiveAdmin.register Pesquisa do
   form do |f|
     f.inputs "Dados da Pesquisa" do
       f.input :nome
+      f.input :professor
       f.input :ano
       f.input :periodo
       f.input :instituicao
