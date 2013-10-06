@@ -2,9 +2,14 @@ class Usuario < ActiveRecord::Base
   attr_accessible :login, :nome
   
   validates_uniqueness_of :login
+  has_many :respostas
   
   def aluno?
     login.length == 10
+  end
+  
+  def ja_respondeu?(pesquisa)
+    Resposta.where(:usuario_id => id).exists?
   end
   
   def curso

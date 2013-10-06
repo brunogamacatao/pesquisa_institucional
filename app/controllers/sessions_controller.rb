@@ -33,6 +33,11 @@ class SessionsController < ApplicationController
   
   private
   def authenticate(login, senha)
+    unless Rails.env.production?
+      return Usuario.find(2) if login.length == 10
+      return Usuario.find(1)
+    end
+    
     dominio = 'cesed.local'
 
     ldap = Net::LDAP.new

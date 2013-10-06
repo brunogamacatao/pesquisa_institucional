@@ -4,7 +4,8 @@ PesquisaInstitucional::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => 'principal#index'
-
+  
+  get '/ja_respondeu', to: 'principal#ja_respondeu', as: 'ja_respondeu'
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
