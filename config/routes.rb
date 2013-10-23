@@ -1,4 +1,6 @@
 PesquisaInstitucional::Application.routes.draw do
+  get "relatorios", to: "relatorios#index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

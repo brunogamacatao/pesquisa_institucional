@@ -1,0 +1,49 @@
+<h1>Acompanhamento das Respostas</h1>
+<hr/>
+<h3>Resultado Geral</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Categoria</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alunos</td>
+      <td><%= @qtd_alunos %></td>
+    </tr>
+    <tr>
+      <td>Professores</td>
+      <td><%= @qtd_professores %></td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+<h3>Resultado por Instituição</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Instituição</th>
+      <th>Categoria</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FACISA</td>
+      <td>Alunos</td>
+      <td><%= @qtd_alunos_facisa %></td>
+    </tr>
+    <tr>
+      <td>FCM</td>
+      <td>Alunos</td>
+      <td><%= @qtd_alunos_fcm %></td>
+    </tr>
+    <tr>
+      <td>ESAC</td>
+      <td>Alunos</td>
+      <td><%= @qtd_alunos_esac %></td>
+    </tr>
+  </tbody>
+</table>
