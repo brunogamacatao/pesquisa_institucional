@@ -17,4 +17,9 @@ class RelatoriosController < ApplicationController
     end
     total
   end
+  
+  helper_method :qtd_por_curso
+  def qtd_por_curso(curso)
+    Usuario.where(:id => Resposta.select("usuario_id").group("usuario_id")).where("length(login) = 10").where("login like ?", "___#{curso.codigo}____").count()
+  end
 end

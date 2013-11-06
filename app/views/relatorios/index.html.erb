@@ -47,3 +47,23 @@
     </tr>
   </tbody>
 </table>
+<hr/>
+<% Instituicao.find_each do |instituicao| %>
+  <h3>Resultado por Curso: <%= instituicao.nome %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Curso</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% instituicao.cursos.each do |curso| %>
+        <tr>
+          <td><%= curso.nome %></td>
+          <td><%= qtd_por_curso(curso) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
